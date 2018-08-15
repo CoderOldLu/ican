@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% block content %}
+    {% load static %}
+    <div id="userAccount" class="container">
+        <div class="row">
+            <div class="maincontent">
+                <h1 class="page-header" id="h1_username">{{ user.username }}</h1>
+                <div class="tag-menu">
+                    <ul id="tab" class="nav">
+                        <li><a href="#content11" data-toggle="tab">账户信息</a></li>
+                        <li class="active"><a href="#content22" data-toggle="tab">更改密码</a></li>
+                        <!--<li><a href="#" data-toggle="tab">订单</a></li>-->
+                    </ul>
+                </div>
+                <div class="tab-content">
+                    <section class="tab-pane profile" id="content11">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <h3>注册日期</h3>
+
+                                    <dl>
+                                        <dd>您在 {{ register_date|date:"Y-m-d" }} 加入了我们</dd>
+                                        <dd>Nice to meet you☺</dd>
+                                    </dl>
+                                    {% if is_buy %}
+                                        {% if buy.payed %}
+                                            <h3>购买日期</h3>
+                                            <dl>
+                                                <dd>您在 {{ buy.start|date:"Y-m-d" }} 购买了我们的软件</dd>
+                                                <dd>非常感谢,Thank you very much!</dd>
+                                            </dl>
+                                        {% endif %}
+                                    {% endif %}
+                                    {% if is_buy %}
+                                        <h3>到期日</h3>
+                                        <dl>
+                                            <dd>您的软件在 {{ buy.expire|date:"Y-m-d" }} 到期</dd>
+                                        </dl>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="tab-pane active" id="content22">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <form enctype="multipart/form-data" action="{% url 'main:changingPassword' %}"
+                                          method="post" id="frmChangePassword" accept-charset="UTF-8"
+                                          onsubmit="return confirm();">
+                                        {% csrf_token %}
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-xs-8">
+                                                    <input id="sms" name="sms" placeholder="验证码" type="text"
+                                                           class="form-control">
+                                                </div>
+                                                <div class="col-xs-4">
+                                                    <button id="btnSms" type="button"
+                                                            class="btn btn-default  pull-right "
+                                                    >发送验证码
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <p id="msgSms" class="bg-danger errorMsg" style="display: none;">
+                                                请输入正确的验证码</p>
+                                        </div>
+                                        <div class="form-group">
+                                            <input id="password_1" name="password_1" placeholder="新密码" type="password"
+                                                   class="form-control">
+                                            <p id="msgPassword" class="bg-danger errorMsg" style="display: none;">hello
+                                                world</p>
+                                        </div>
+                                        <div class="form-group">
+                                            <input id="password_2" name="password_2" placeholder="密码" type="password"
+                                                   class="form-control">
+                                        </div>
+
+                                        <div style="text-align: center;">
+
+                                            <button type="submit" class="btn btn-primary  ">
+                                                确定
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

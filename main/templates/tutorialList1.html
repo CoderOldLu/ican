@@ -1,0 +1,37 @@
+{% load static %}
+{% block content %}
+    <div class="container" style="margin-top: 30px">
+        <div class="row">
+            <div class="tag-menu">
+                <ul id="tab" class="nav" style="margin-top:30px;">
+                    <li class="active menu_ins"><a href="/main/Tutoriallist/0/" data-index="all"
+                                                   class="menu_ins">全部课程</a>
+                    </li>
+
+                    <li class="menu_ins"><a href="/main/Tutoriallist/1/" data-index="1" class="menu_ins">基础</a></li>
+
+                    <li class="menu_ins"><a href="/main/Tutoriallist/2/" data-index="2" class="menu_ins">进阶</a></li>
+
+                    <li class="menu_ins"><a href="/main/Tutoriallist/3/" data-index="3" class="menu_ins">高级</a></li>
+
+                    <li class="menu_ins"><a href="/main/Tutoriallist/4/" data-index="4" class="menu_ins">杂项</a></li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="menu-list">
+            <div class="container">
+
+            </div>
+        </div>
+
+
+        <div class="row" style="display: none" id="down_tutor">
+            <div class="col-lg-9 col-md-8 col-sm-7 col-xs-12" id="subdiv">
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-5 hidden-xs">
+            </div>
+        </div>
+    </div>
+{% endblock %}

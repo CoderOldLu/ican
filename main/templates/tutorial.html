@@ -1,0 +1,144 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    {% csrf_token %}
+    <div class="row" id="Tutorial_Cover"
+         style="background:url({{ tutorial.showcase.url }})no-repeat 50% 0;height:527px; display: block">
+    </div>
+    <div id="Tutorial_Cover_title">
+        <div class="container">
+            <div class="course-info">
+                <h2>{{ tutorial.caption }}</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="player" style="display: none;">
+        <div class="myplayer" data-key="$419511513879119">
+            <video>
+                {#                {% with v=tutorial.video_set.all|first %}#}
+                {#                    <source type="video/mp4" src="{{ v.videofile.url }}">#}
+                {#                    <p>{{ v.videofile.url }}</p>#}
+                {#                {% endwith %}#}
+                <source type="video/mp4" src="/media/videos/1.mp4">
+            </video>
+        </div>
+        <script>
+            $(".myplayer").flowplayer();
+        </script>
+    </div>
+    <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 playbar">
+            <button id="autoplay_switch" class="btn btn-default">自动播放-OFF</button>
+            <button class="btn btn-default" style="display:none;">收藏</button>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 hidden-xs playbar">
+            <p id="video_caption" style="font-size: 18px;margin-top: 5px"></p>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 playbar">
+            <div id="current_video" style="display: none">
+
+            </div>
+
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 col-md-8 col-sm-7 col-xs-12 courselist">
+                <div class="maincontent">
+                    <div class="tag-menu">
+                        <ul id="tab" class="nav">
+                            <li class=""><a href="#info" data-toggle="tab">介绍</a></li>
+                            <li class="active"><a href="#toc" data-toggle="tab">目录</a></li>
+                        </ul>
+                    </div>
+                    <div class="tab-content">
+                        <section class="tab-pane first clearfix" id="info">
+                            <div class="video_intro">
+                                <div class="view-content">
+                                    <div>
+                                        <p>{{ tutorial.intro1 }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="tab-pane active clearfix" id="toc">
+                            <div>
+                                <div class="video_list">
+                                    <table class="views-table cols-2 table">
+                                        <thead>
+                                        <tr>
+                                            <th>
+                                                目录
+                                            </th>
+                                            <th>
+                                                时长
+                                            </th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for video in tutorial.video_set.all %}
+                                            <tr>
+                                                <td>
+                                                    <a href="#" data-src="{{ video.id }}"
+                                                       data-index="{{ forloop.counter }}"
+                                                       class="video_link">{{ forloop.counter }}-{{ video.caption }}</a>
+                                                </td>
+                                                <td>
+                                                    {{ video.length }}
+                                                </td>
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-5 hidden-xs">
+                <div class="sidebar">
+
+                    <div class="box">
+                        <h4>课程简介</h4>
+                        <p>{{ tutorial.intro }}</p>
+
+                    </div>
+                    <div class="box">
+                        <p><strong>发表于：</strong>{{ tutorial.created | date:"Y-m-d" }}</p>
+                    </div>
+                    <div class="box">
+                        <p><strong>更新于：</strong>{{ tutorial.modified | date:"Y-m-d" }}</p>
+                    </div>
+
+                    <div class="box">
+                        <p><strong>时长：</strong>{{ tutorial.length }}</p>
+                    </div>
+                    <div class="box">
+                        <a class="btn btn-danger" href="{{ tutorial.download_link }}" target="_blank">下 载 课 程</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="prompt" class="modal fade" tabindex="-1" style="top:20%">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" data-dismiss="modal">&times;</button>
+                    <h5><strong>提示</strong></h5>
+                </div>
+                <div class="modal-body">
+                    <i class="fa fa-exclamation-triangle"></i>
+
+                    <p><strong>对不起，您观看的视频是VIP视频，无法进行播放！</strong></p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" data-dismiss="modal">确定</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

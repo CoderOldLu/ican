@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% block content %}
+    {% load static %}
+    <div id="order-class">
+        <div class="container">
+            <div class="row ">
+                <h1 class="page-header">价格</h1>
+                <div class="col-md-3 " style="display: none">
+                    <div class="subject text-center">
+                        <div class="sub-title">
+                            <span>包月</span>
+                        </div>
+                        <div class="sub-price">
+                            <span>¥ 199</span>
+                        </div>
+                        <div class="sub-item">
+                            <span>在线学习所有课程。</span>
+                        </div>
+                        <div class="sub-item">
+                            <span>运营助手里面的所有功能不限制使用。</span>
+                        </div>
+                        <div class="sub-item">
+                            <span>订购送半年，续订送一年半。</span>
+                        </div>
+                        <div class="sub-item">
+                            <a href="order-info.html" class="btn btn-primary">立即购买</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <div class="subject text-center">
+                        <div class="sub-title">
+                            <span>季度</span>
+                        </div>
+                        <div class="sub-price">
+                            <span>¥ 299</span>
+                        </div>
+                        <div class="sub-item">
+                            <span>风雨凄凄，鸡鸣喈喈</span>
+                        </div>
+                        <div class="sub-item">
+                            <span>即见君子，云胡不夷</span>
+                        </div>
+                        <div class="sub-item">
+                            <span>有效期<span style="font-style: oblique;color: #5bc0de;">90</span>天</span>
+                        </div>
+                        <div class="sub-item">
+                            <a href="{% url 'main:buy' 1 %}" class="btn btn-primary">立即购买</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <div class="subject text-center">
+                        <div class="sub-title">
+                            <span>半年</span>
+                        </div>
+                        <div class="sub-price">
+                            <span>¥ 399</span>
+                        </div>
+                        <div class="sub-item">
+                            <span>风雨潇潇，鸡鸣胶胶</span>
+                        </div>
+                        <div class="sub-item">
+                            <span>既见君子，云胡不瘳</span>
+                        </div>
+                        <div class="sub-item">
+                            <span>有效期<span style="font-style: oblique;color: #5bc0de;">180</span>天</span>
+                        </div>
+                        <div class="sub-item">
+                            <a href="{% url 'main:buy' 2 %}" class="btn btn-primary">立即购买</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <div class="subject text-center">
+                        <div class="sub-title">
+                            <span>包年</span>
+                        </div>
+                        <div class="sub-price">
+                            <span>¥ 499</span>
+                        </div>
+                        <div class="sub-item">
+                            <span>风雨如晦，鸡鸣不已</span>
+                        </div>
+                        <div class="sub-item">
+                            <span>既见君子，云胡不喜</span>
+                        </div>
+                        <div class="sub-item">
+                            <span>有效期<span style="font-style: oblique;color: #5bc0de;">365</span>天</span>
+                        </div>
+                        <div class="sub-item">
+                            <a href="{% url 'main:buy' 3 %}" class="btn btn-primary">立即购买</a>
+                        </div>
+                    </div>
+                    <!--<div class="cor "><img src="static/images/tag-recommend.png" alt=""></div>-->
+                    <i class="cor icon-tag-economical"></i>
+                </div>
+                <div class="subject-tip text-center">
+                    <p>订阅前要考虑好哦，决定以后就不给您退订了哈。</p>
+                    <p>有您的支持，我们才能继续下去，非常感谢 ：）</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

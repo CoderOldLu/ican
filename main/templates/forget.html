@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container" style="margin-top:50px;">
+        <div class="row">
+            <div class="container">
+                <h1 class="page-header">忘记密码</h1>
+            </div>
+            <div class="maincontent">
+                <div class="tag-menu">
+                    <ul id="tab" class="nav">
+                        <li class=""><a href="{% url 'main:CreateNewUser' %}">创建新账号</a></li>
+                        <li class=""><a href="{% url 'main:login' %}">登录</a></li>
+                        <li class="active"><a href="#forget" data-toggle="tab">忘记密码</a></li>
+                    </ul>
+                </div>
+                <div class="tab-content">
+                    <section class="tab-pane active  first clearfix" id="forget">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+
+                                    <div class="form-group">
+                                        <input id="username" maxlength="100" name="user_name" placeholder="手机号码"
+                                               type="text" class="form-control">
+                                        <p id="msgUsername" class="bg-danger errorMsg" style="display: none;">hello
+                                            world</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            {#                                            <label class="sr-only" for="sms">sms</label>#}
+                                            <div class="col-xs-8">
+                                                <input id="sms" name="sms" placeholder="验证码" type="text"
+                                                       class="form-control">
+                                            </div>
+                                            <div class="col-xs-4">
+                                                <button id="btnSms" type="button"
+                                                        class="btn btn-default  pull-right "
+                                                >发送验证码
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <p id="msgSms" class="bg-danger errorMsg" style="display: none;">hello
+                                            world</p>
+
+                                    </div>
+                                    <div style="text-align: center;">
+
+                                        <button id="btnforget" type="button" class="btn btn-primary  ">
+                                            确定
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="prompt" class="modal fade" tabindex="-1" style="top:20%" data-backdrop="false">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" data-dismiss="modal">&times;</button>
+                    <h5><strong>提示</strong></h5>
+                </div>
+                <div class="modal-body">
+                    <i class="fa fa-exclamation-triangle"></i>
+                    <p><strong>重置密码成功，密码已经发到你的手机!</strong>
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" data-dismiss="modal">确定</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

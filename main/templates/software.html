@@ -1,0 +1,177 @@
+{% extends "base.html" %}
+{% block content %}
+    {% load static %}
+    <div id="fullpage_soft">
+        <div class="section" id="section0">
+            <div id="title">
+                <h1>淘宝运营助手</h1>
+                <p>一键全方位解决淘宝店铺运营方面所有繁琐的工作！</p>
+                <a href="http://pan.baidu.com/s/1jIqnef0" target="_blank" class="btn btn-primary btn-lg  downloadButton"> 免费试用</a>
+                <a href="{% url 'main:tutorial' 155 %}" class="btn btn-warning btn-lg  downloadButton"> 视频教程</a>
+                <a href="{% url 'main:shop' %}" class="btn btn-danger btn-lg  downloadButton"> 立即购买</a>
+            </div>
+            <i class="godown"><span></span></i>
+        </div>
+        <div class="section" id="section1">
+            <div class="container">
+                <div class="row">
+                    <div class="subfield">
+                        <div class="col-xs-4">
+
+                            <dl>
+                                <dt><img src="{% static 'images/seogj-icon.png' %}" alt=""></dt>
+                                <dd>
+                                    <h2>seo管家</h2>
+                                    <p>一键生成核心词库、黄金词库，论断标题，全方位解决seo所有繁琐的工作！</p>
+                                </dd>
+                            </dl>
+                            <br>
+                            <dl>
+                                <dt><img src="{% static 'images/hxcwjj-icon.png' %}" alt=""></dt>
+                                <dd>
+                                    <h2>核心词挖掘机</h2>
+                                    <p>一键抓取热门核心词和热门修饰词，智能建立核心词数据库！</p>
+                                </dd>
+                            </dl>
+                            <br>
+                            <dl>
+                                <dt><img src="{% static 'images/yhbt-icon.png' %}" alt=""></dt>
+                                <dd>
+                                    <h2>标题优化</h2>
+                                    <p>一键透析宝贝引流词和成交词，一目了然，再也不担心换错标题了！</p>
+                                </dd>
+                            </dl>
+                            <br>
+                            <dl>
+                                <dt><img src="{% static 'images/dptj-icon.png' %}" alt=""></dt>
+                                <dd>
+                                    <h2>店铺诊断</h2>
+                                    <p>一键诊断店铺动态评分，零销量宝贝占比，上下架布局，关键可以诊断对手！</p>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="col-xs-4">
+                            <dl>
+                                <dt><img src="{% static 'images/hyfx-icon.png' %}" alt=""></dt>
+                                <dd>
+                                    <h2>行业分析</h2>
+                                    <p>一键抓取行业内慕信息，生成分析图表，引爆期和衰退期！</p>
+                                </dd>
+                            </dl>
+                            <br>
+                            <dl>
+                                <dt><img src="{% static 'images/jgfx-icon.png' %}" alt=""></dt>
+                                <dd>
+                                    <h2>价格分析</h2>
+                                    <p>一键抓取宝贝成交价格，生成分析图表，智能定位什么价位好卖！</p>
+                                </dd>
+                            </dl>
+                            <br>
+                            <dl>
+                                <dt><img src="{% static 'images/sjts-icon.png' %}" alt=""></dt>
+                                <dd>
+                                    <h2>上架透视</h2>
+                                    <p>一键抓取竞争宝贝上架时间，生成竞争透视表，抓住空白时间才能抓住流量！</p>
+                                </dd>
+                            </dl>
+                            <br>
+                            <dl>
+                                <dt><img src="{% static 'images/llfx-icon.png' %}" alt=""></dt>
+                                <dd>
+                                    <h2>流量分析</h2>
+                                    <p>一键诊断店铺流量全貌，流量走势，流量占比，引流宝贝构成</p>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="col-xs-4">
+                            <dl>
+                                <dt><img src="{% static 'images/bkwjj-icon.png' %}" alt=""></dt>
+                                <dd>
+                                    <h2>爆款挖掘机</h2>
+                                    <p>一键挖出蓝海爆款，选择大于努力，电商必备神器！</p>
+                                </dd>
+                            </dl>
+                            <br>
+                            <dl>
+                                <dt><img src="{% static 'images/ztcgj-icon.png' %}" alt=""></dt>
+                                <dd>
+                                    <h2>直通车管家</h2>
+                                    <p>一键优化匹配方式，一键优化出价，你只需要填好词，剩下的自动搞定！</p>
+                                </dd>
+                            </dl>
+                            <br>
+                            <dl>
+                                <dt><img src="{% static 'images/ztck-icon.png' %}" alt=""></dt>
+                                <dd>
+                                    <h2>主图查看器</h2>
+                                    <p>将主图拖入查看器，并将查看器移动到网页上主图位置确认主图效果！</p>
+                                </dd>
+                            </dl>
+                            <br>
+                            <dl>
+                                <dt><img src="{% static 'images/pmjk-icon.png' %}" alt=""></dt>
+                                <dd>
+                                    <h2>排名监控</h2>
+                                    <p>实时监控宝贝排名，生成宝贝排名曲线，宝贝进入前几页智能提醒！</p>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <i class="godown"><span></span></i>
+        </div>
+
+        <div class="section" id="section2">
+            <div id="video" class="plyr">
+                {#                <video muted poster="{% static 'images/bg3-a.jpg' %}">#}
+                <video muted poster="http://media.taobaoican.com/%E7%BD%91%E7%AB%99/bg3-a.jpg">
+                                        <source src="{% static 'images/soft.mp4' %}" type="video/mp4">
+{#                    <source src="http://media.taobaoican.com/%E7%BD%91%E7%AB%99/soft.mp4" type="video/mp4">#}
+{#                    <source src="http://media.taobaoican.com/%E7%BD%91%E7%AB%99/soft.mp4" type="video/mp4">#}
+                </video>
+            </div>
+
+
+            <i class="godown"><span></span></i>
+        </div>
+        <div class="section" id="section3">
+            <h1>遇见你，我们很高兴！</h1>
+            <p><i class="fa fa-qq "><span>381 574 820</span></i></p>
+            <a href="http://pan.baidu.com/s/1jIqnef0" target="_blank" class="btn btn-primary btn-lg  downloadButton">立即下载</a>
+        </div>
+
+    </div>
+
+
+{% endblock %}
+{% block plyr %}
+
+    <script src="{% static 'lib/js/plyr.js' %}"></script>
+
+    <script>
+
+        (function () {
+            "use strict",
+                    plyr.setup({
+                        controls: [
+                            'play-large',
+                            'play',
+                            'progress',
+                            'current-time',
+                            'mute',
+                            'volume',
+                            'captions',
+                        ],
+                    });
+        }());
+        $(function () {
+            $('#fullpage_soft').fullpage({
+                'navigation': true,
+                anchors: ['firstPage', 'secondPage', '3rdPage']
+            });
+        });
+    </script>
+{% endblock %}
